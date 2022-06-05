@@ -1,0 +1,48 @@
+<html>
+  <body>
+    <script>
+      function loadXML() {
+        var xml = new XMLHttpRequest()
+        xml.onreadystatechange = function () {
+          studDetails(this)
+        }
+        xml.open('GET', 'data.xml', true)
+        xml.send()
+      }
+      function studDetails(xml) {
+        var xmlDoc = xml.responseXML
+        var data = ' '
+        console.log('Enter')
+        var x = xmlDoc.getElementsByTagName('student')
+        console.log(x)
+        for (var i = 0; i < x.length; i++) {
+          var name = x[i].getElementsByTagName('name')[0].childNodes[0]
+            .nodeValue
+          var rollno = x[i].getElementsByTagName('rollno')[0].childNodes[0]
+            .nodeValue
+          var percentage = x[i].getElementsByTagName('percentage')[0]
+            .childNodes[0].nodeValue
+          var gender = x[i].getElementsByTagName('gender')[0].childNodes[0]
+            .nodeValue
+          console.log(name + ',' + rollno + ',' + percentage + ',' + gender)
+          if (document.getElementById('rollno').value == rollno) {
+            data +=
+              name + '<br/>' + rollno + '<br/>' + percentage + '<br/>' + gender
+            break
+          }
+        }
+        if (data == ' ') data = 'No person found'
+        document.getElementById('data').innerHTML = data
+      }
+    </script>
+    <center>
+      <br />
+      <br />
+      <input type="text" id="rollno" placeholder="enter your rollno" />
+      <br />
+      <br />
+      <button type="button" onclick="loadXML()">submit</button>
+      <p id="data">Hello</p>
+    </center>
+  </body>
+</html>

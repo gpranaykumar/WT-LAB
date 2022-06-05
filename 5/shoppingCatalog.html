@@ -1,0 +1,36 @@
+<html>
+    <head><title>Amazon</title></head>
+    <body bgcolor="">
+		<!-- cyan -->
+        <center><h1>Shopping Cart</h1></center>
+        <br>
+        <table align="center">
+            <tr>
+                <td>Select Book</td>
+                <td>
+                    <select>
+                        <optgroup label="select the book">
+                            <option value="java">Java</option>
+                            <option value="python">Python</option>
+                            <option value="django">Django</option>
+                            <option value="MSSQLServer">MS SQL Server</option>
+                            <option value="mySQL">My SQL</option>
+                        </optgroup>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Quantity</td>
+                <td><input type="text" id="q" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <form method="post" action="payment.html">
+                        <input type="submit" value="ok"/>
+                    </form>
+                </td>
+            </tr>
+        </table>
+		<center>Cost of book is "500" + shipping "100"</center>
+    </body>
+</html>
