@@ -10,7 +10,7 @@
 			fclose($myfilelink);
 			echo $myfilecontents;
 			
-			$myfile2 = "file2.txt";
+			$myfile2 = "D://file2.txt";
 			$myfilelink2 = fopen($myfile2,'wr') or die("can't open file");
 			$newcontents = $myfilecontents;
 			fwrite($myfilelink2,$newcontents);
